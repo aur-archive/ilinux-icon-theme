@@ -1,0 +1,21 @@
+# Maintainer: xzy3186 <xzy3186@gmail.com>
+
+pkgname=ilinux-icon-theme
+pkgver=v.0.9.06
+pkgrel=1
+pkgdesc="Icons design by icons factory depend on Flurry system icon and faenza icons"
+url="http://gnome-look.org/content/show.php/iLinux-icons?content=156955&PHPSESSID=959fc049dfdb47e6df0ab16bc075c9ca"
+license=('LGPL')
+arch=('any')
+#options=(!strip)
+source=("http://fc06.deviantart.net/fs70/f/2014/065/6/9/ilinux_icons_v_0_9_06_by_haniahmed-d5v1ixd.7z")
+md5sums=('c878900b5430654292fc15bb5056fe02')
+
+package() {
+  cd "$srcdir"
+  mkdir -p "$pkgdir/usr/share/icons"
+
+  cp -rf iLinux-iCons "$pkgdir/usr/share/icons/"
+  chmod -R 755 $pkgdir/usr/share/icons/iLinux-iCons
+
+}
